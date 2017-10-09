@@ -1,0 +1,4 @@
+---
+- name: Install Kerberos YUM Dependencies
+  yum: name="{{item}}"
+  with_items: "{{ kerberos_yum_pkgs }}"
