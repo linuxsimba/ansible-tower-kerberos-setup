@@ -4,8 +4,8 @@
     msg: " kdc_domain variable is not defined"
 
 - assert:
-    that: kdc_server_name is defined
-    msg: "kdc_server_name variable is not defined"
+    that: kdc_server_fqdn is defined
+    msg: "kdc_server_fqdn variable is not defined"
 
 - name: Install Kerberos YUM Dependencies
   yum: name="{{item}}"
@@ -15,7 +15,7 @@
   template:
     src: krb5.conf.j2
     dest: /etc/krb5.conf.d/adserver.conf
-    mode: 0640
+    mode: 0644
     group: root
     owner: root
 

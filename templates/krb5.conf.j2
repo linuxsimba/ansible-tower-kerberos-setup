@@ -1,6 +1,7 @@
 [libdefaults]
  dns_lookup_realm = false
  dns_lookup_kdc = false
+ default_realm = {{ kdc_domain|upper}}
 
 [realms]
   {{ kdc_domain|upper }} = {
