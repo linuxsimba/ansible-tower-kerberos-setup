@@ -1,0 +1,13 @@
+[libdefaults]
+ dns_lookup_realm = false
+ dns_lookup_kdc = false
+
+[realms]
+  {{ kdc_domain|upper }} = {
+    kdc = {{ kdc_server_fqdn }}
+    admin_server = {{ kdc_server_fqdn }}
+  }
+
+[domain_realm]
+.{{ kdc_domain }} = {{ kdc_domain|upper }}
+{{ kdc_domain }} = {{ kdc_domain|upper }}

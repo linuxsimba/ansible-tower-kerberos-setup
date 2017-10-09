@@ -1,2 +1,13 @@
 ---
 # defaults file for ansible-tower-kerberos-setup
+
+# kdc servername. Example: adserver
+# kdc_server_name: ""
+
+# kdc domain  Example: linuxsimba.local
+# kdc_domain: ""
+
+# Provide fqdn for ad server / kerberos server. Example: adserver.linuxsimba.local
+kdc_server_fqdn: "{{ kdc_server_name }}.{{kdc_domain}}"
+
+
