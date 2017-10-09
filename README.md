@@ -33,6 +33,9 @@ Example Playbook
 - hosts: tower
   roles:
     - ansible-tower-kerberos-setup
+      kdc_domain: linuxsimba.local
+      kdc_server_name: adserver01
+
 ```
 
 Then to execute the playbook from the Tower setup script run `` ansible-playbook -i inventory install_kerberos.yml ``
