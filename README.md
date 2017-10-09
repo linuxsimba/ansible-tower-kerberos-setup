@@ -11,7 +11,11 @@ Requirements
 Role Variables
 --------------
 
-None
+* ``kdc_server_name``: Define the hostname of the KDC/AD Controller
+
+* ``kdc_domain``: Keberos domain name. Typically a domain name in capital letters. For example: EXAMPLE.COM
+
+* ``kdc_server_fqdn``: Full FQDN of KDC/AD Controller. By default is ``{{ kdc_server_name }}.{{kdc_domain}}``
 
 Dependencies
 ------------
