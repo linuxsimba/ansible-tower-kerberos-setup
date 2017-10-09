@@ -2,3 +2,9 @@
 - name: Install Kerberos YUM Dependencies
   yum: name="{{item}}"
   with_items: "{{ kerberos_yum_pkgs }}"
+
+- name: ensure that pywinrm is installed
+  pip:
+    name: pywinrm
+    virtualenv_command: /var/lib/awx/venv/ansible/bin/activate
+  remote_user: awx
