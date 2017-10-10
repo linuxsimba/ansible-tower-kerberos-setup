@@ -19,9 +19,9 @@
     group: root
     owner: root
 
-- name: ensure that pywinrm is installed
+- name: ensure that pywinrm with kerberos dependencies is installed
   pip:
-    name: pywinrm
+    name: "pywinrm[kerberos]"
     virtualenv: /var/lib/awx/venv/ansible
     virtualenv_command: /var/lib/awx/venv/ansible/bin/activate
   become: yes
